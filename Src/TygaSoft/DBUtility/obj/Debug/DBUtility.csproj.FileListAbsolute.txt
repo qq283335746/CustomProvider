@@ -1,0 +1,14 @@
+C:\MyCodeWorkspace\天涯孤岸软件\Security\TygaSoft-VS2010\DBUtility\bin\Debug\TygaSoft.DBUtility.dll
+C:\MyCodeWorkspace\天涯孤岸软件\Security\TygaSoft-VS2010\DBUtility\bin\Debug\TygaSoft.DBUtility.pdb
+C:\MyCodeWorkspace\天涯孤岸软件\Security\TygaSoft-VS2010\DBUtility\bin\Debug\System.Data.SQLite.dll
+C:\MyCodeWorkspace\天涯孤岸软件\Security\TygaSoft-VS2010\DBUtility\bin\Debug\System.Data.SQLite.xml
+C:\MyCodeWorkspace\天涯孤岸软件\Security\TygaSoft-VS2010\DBUtility\obj\Debug\ResolveAssemblyReference.cache
+C:\MyCodeWorkspace\天涯孤岸软件\Security\TygaSoft-VS2010\DBUtility\obj\Debug\TygaSoft.DBUtility.dll
+C:\MyCodeWorkspace\天涯孤岸软件\Security\TygaSoft-VS2010\DBUtility\obj\Debug\TygaSoft.DBUtility.pdb
+C:\MyCodeWorkspace\天涯孤岸软件\Security\TygaSoft\DBUtility\bin\Debug\TygaSoft.DBUtility.dll
+C:\MyCodeWorkspace\天涯孤岸软件\Security\TygaSoft\DBUtility\bin\Debug\TygaSoft.DBUtility.pdb
+C:\MyCodeWorkspace\天涯孤岸软件\Security\TygaSoft\DBUtility\bin\Debug\System.Data.SQLite.dll
+C:\MyCodeWorkspace\天涯孤岸软件\Security\TygaSoft\DBUtility\bin\Debug\System.Data.SQLite.xml
+C:\MyCodeWorkspace\天涯孤岸软件\Security\TygaSoft\DBUtility\obj\Debug\ResolveAssemblyReference.cache
+C:\MyCodeWorkspace\天涯孤岸软件\Security\TygaSoft\DBUtility\obj\Debug\TygaSoft.DBUtility.dll
+C:\MyCodeWorkspace\天涯孤岸软件\Security\TygaSoft\DBUtility\obj\Debug\TygaSoft.DBUtility.pdb
