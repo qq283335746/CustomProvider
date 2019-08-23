@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EnumMembershipCreateStatus.cs" />
+    <Compile Include="LiteDbMembershipProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SM.cs" />
     <Compile Include="SQLiteConnectionHelper.cs" />
@@ -60,6 +61,14 @@
     <ProjectReference Include="..\DBUtility\DBUtility.csproj">
       <Project>{BBA09C34-2399-4515-B384-DA90F4E696D9}</Project>
       <Name>DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repositories.LiteDB\Repositories.LiteDB.csproj">
+      <Project>{76f808c4-29e1-49d2-9592-73a02255de17}</Project>
+      <Name>Repositories.LiteDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XCore\XCore.csproj">
+      <Project>{9e42b5e2-7929-4f90-abeb-b63716c2defe}</Project>
+      <Name>XCore</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

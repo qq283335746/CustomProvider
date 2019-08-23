@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net40</TargetFrameworks>
+    <AssemblyName>Yibi.Repositories.LiteDB</AssemblyName>
+    <RootNamespace>Yibi.Repositories.LiteDB</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiteDB" Version="4.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\XCore\XCore.csproj" />
+  </ItemGroup>
+
+</Project>
