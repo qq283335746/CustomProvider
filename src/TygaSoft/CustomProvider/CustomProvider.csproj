@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="EnumMembershipCreateStatus.cs" />
     <Compile Include="LiteDbMembershipProvider.cs" />
+    <Compile Include="LiteDbRoleProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SM.cs" />
     <Compile Include="SQLiteConnectionHelper.cs" />
