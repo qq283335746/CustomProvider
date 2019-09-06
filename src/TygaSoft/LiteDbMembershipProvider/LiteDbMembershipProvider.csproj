@@ -18,6 +18,10 @@
     <EmbedAllSources>true</EmbedAllSources>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageProjectUrl>https://github.com/qq283335746/SQLiteProvider/tree/master/src/TygaSoft/LiteDbMembershipProvider</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/qq283335746/SQLiteProvider/tree/master/src/TygaSoft/LiteDbMembershipProvider</RepositoryUrl>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Yibi.LiteDbMembershipProvider.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
