@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Configuration;
-using System.Configuration.Provider;
 using System.Web;
 using System.Web.Security;
-using TygaSoft.CustomProvider;
-using Yibi.Core;
-using Yibi.Core.Entities;
-using Yibi.Repositories.LiteDB;
+using Yibi.LiteDbMembershipProvider.Entities;
+using Yibi.LiteDbMembershipProvider.Enums;
 
-namespace TygaSoft.CustomProvider
+namespace Yibi.LiteDbMembershipProvider
 {
     public class LiteDbMembershipProvider : MembershipProvider
     {
@@ -47,16 +44,16 @@ namespace TygaSoft.CustomProvider
 
             _applicationName = config["applicationName"];
             _description = config["description"];
-
-            _enablePasswordRetrieval = SU.GetBooleanValue(config, "enablePasswordRetrieval", false);
-            _enablePasswordReset = SU.GetBooleanValue(config, "enablePasswordReset", true);
-            _requiresQuestionAndAnswer = SU.GetBooleanValue(config, "requiresQuestionAndAnswer", true);
-            _requiresUniqueEmail = SU.GetBooleanValue(config, "requiresUniqueEmail", true);
-            _maxInvalidPasswordAttempts = SU.GetIntValue(config, "maxInvalidPasswordAttempts", 5, false, 0);
-            _passwordAttemptWindow = SU.GetIntValue(config, "passwordAttemptWindow", 10, false, 0);
             _passwordStrengthRegularExpression = config["passwordStrengthRegularExpression"];
-            _minRequiredPasswordLength = SU.GetIntValue(config, "minRequiredPasswordLength", 7, false, 128);
-            _minRequiredNonalphanumericCharacters = SU.GetIntValue(config, "minRequiredNonalphanumericCharacters", 1, true, 128);
+
+            bool.TryParse(config["enablePasswordRetrieval"], out _enablePasswordRetrieval);
+            bool.TryParse(config["enablePasswordReset"], out _enablePasswordReset);
+            bool.TryParse(config["requiresQuestionAndAnswer"], out _requiresQuestionAndAnswer);
+            bool.TryParse(config["requiresUniqueEmail"], out _requiresUniqueEmail);
+            int.TryParse(config["maxInvalidPasswordAttempts"], out _maxInvalidPasswordAttempts);
+            int.TryParse(config["passwordAttemptWindow"], out _passwordAttemptWindow);
+            int.TryParse(config["minRequiredPasswordLength"], out _minRequiredPasswordLength);
+            int.TryParse(config["minRequiredNonalphanumericCharacters"], out _minRequiredNonalphanumericCharacters);
 
             string passwordFormat = config["passwordFormat"];
             if (passwordFormat == null) passwordFormat = "Hashed";
@@ -73,11 +70,9 @@ namespace TygaSoft.CustomProvider
                     _passwordFormat = MembershipPasswordFormat.Hashed;
                     break;
                 default:
-                    throw new ProviderException(SM.GetString(SM.Provider_bad_password_format));
+                    _passwordFormat = MembershipPasswordFormat.Hashed;
+                    break;
             }
-
-            if (PasswordFormat == MembershipPasswordFormat.Hashed && EnablePasswordRetrieval)
-                throw new ProviderException(SM.GetString(SM.Provider_can_not_retrieve_hashed_password));
 
             config.Remove("connectionStringName");
             config.Remove("enablePasswordRetrieval");
@@ -115,12 +110,6 @@ namespace TygaSoft.CustomProvider
             get { return _applicationName; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                    throw new ArgumentNullException("value");
-
-                if (value.Length > 256)
-                    throw new ProviderException(SM.GetString(SM.Provider_application_name_too_long));
-
                 _applicationName = value;
             }
         }

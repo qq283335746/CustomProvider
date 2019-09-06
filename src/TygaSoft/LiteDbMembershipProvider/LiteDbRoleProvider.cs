@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Configuration;
 using System.Linq;
-using System.Text;
 using System.Web.Security;
-using Yibi.Core.Entities;
-using Yibi.Repositories.LiteDB;
+using Yibi.LiteDbMembershipProvider.Entities;
 
-namespace TygaSoft.CustomProvider
+namespace Yibi.LiteDbMembershipProvider
 {
     public class LiteDbRoleProvider : RoleProvider
     {
@@ -57,7 +55,14 @@ namespace TygaSoft.CustomProvider
             }
         }
 
-        public override string ApplicationName => _applicationName;
+        public override string ApplicationName
+        {
+            get { return _applicationName; }
+            set
+            {
+                _applicationName = value;
+            }
+        }
 
         public override void AddUsersToRoles(string[] usernames, string[] roleNames)
         {
@@ -101,12 +106,12 @@ namespace TygaSoft.CustomProvider
 
         public override void RemoveUsersFromRoles(string[] usernames, string[] roleNames)
         {
-            throw new NotImplementedException();
+            _rolesService.RemoveUsersFromRoles(ApplicationId, usernames, roleNames);
         }
 
         public override bool RoleExists(string roleName)
         {
-            throw new NotImplementedException();
+            return _rolesService.RoleExists(ApplicationId, roleName);
         }
     }
 }

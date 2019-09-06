@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net40;net45;net46</TargetFrameworks>
+    <AssemblyName>Yibi.LiteDbMembershipProvider</AssemblyName>
+    <RootNamespace>Yibi.LiteDbMembershipProvider</RootNamespace>
+    <PackageId>Yibi.LiteDbMembershipProvider</PackageId>
+    <PackageTags>LiteDB,MembershipProvider,RoleProvider </PackageTags>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+    <Authors>yibi chen</Authors>
+    <Company>yibi chen</Company>
+    <Description>Using litedb to implement Membership、Role</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <IncludeSymbols>true</IncludeSymbols>
+    <EmbedAllSources>true</EmbedAllSources>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiteDB" Version="4.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+
+</Project>

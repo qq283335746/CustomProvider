@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using Yibi.LiteDbMembershipProvider.Enums;
 
-namespace Yibi.Core
+namespace Yibi.LiteDbMembershipProvider.Entities
 {
     public class PasswordInfo
     {

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Yibi.Core;
-using Yibi.Core.Entities;
+using Yibi.LiteDbMembershipProvider.Entities;
+using Yibi.LiteDbMembershipProvider.Enums;
 
-namespace Yibi.Repositories.LiteDB
+namespace Yibi.LiteDbMembershipProvider
 {
     public class AspnetSecurityService
     {
@@ -268,23 +267,6 @@ namespace Yibi.Repositories.LiteDB
             RolesInfo roleInfo = _db.Roles.FindOne(m => m.ApplicationId.Equals(applicationId) && m.Name.Equals(username, StringComparison.OrdinalIgnoreCase));
 
             return _db.UsersInRoles.FindOne(m => m.UserId.Equals(userInfo.Id) && m.RoleId.Equals(roleInfo.Id)) != null;
-        }
-
-        public void AddUsersToRoles(Guid applicationId, string[] usernames, string[] roleNames)
-        {
-            Guid[] userids = _db.Users.Find(m => m.ApplicationId.Equals(applicationId) && usernames.Contains(m.Name)).Select(m => m.Id).ToArray();
-            Guid[] roleids = _db.Roles.Find(m => m.ApplicationId.Equals(applicationId) && roleNames.Contains(m.Name)).Select(m => m.Id).ToArray();
-
-            foreach(Guid roleid in roleids)
-            {
-                foreach(Guid userid in userids)
-                {
-                    if(_db.UsersInRoles.FindOne(m=>m.RoleId.Equals(roleid) && m.UserId.Equals(userid)) == null)
-                    {
-                        _db.UsersInRoles.Insert(new UsersInRolesInfo { UserId = userid, RoleId = roleid });
-                    }
-                }
-            }
         }
 
         public void RemoveUsersFromRoles(Guid applicationId, string[] usernames, string[] roleNames)
