@@ -82,7 +82,12 @@ namespace Yibi.LiteDbMembershipProvider
 
         public bool DeleteUser(Guid applicationId, string username, bool deleteAllRelatedData)
         {
-            return _db.Users.Delete(m => m.ApplicationId.Equals(applicationId) && m.Name.Equals(username, StringComparison.OrdinalIgnoreCase)) > 0;
+            UsersInfo userInfo = _db.Users.FindOne(m => m.ApplicationId.Equals(applicationId) && m.Name.Equals(username, StringComparison.OrdinalIgnoreCase));
+            if (userInfo == null) return false;
+            _db.Users.Delete(m => m.Id.Equals(userInfo.Id));
+            _db.UsersInRoles.Delete(m => m.UserId.Equals(userInfo.Id));
+
+            return true;
         }
 
         public IEnumerable<UsersInfo> FindUsersByEmail(Guid applicationId, string email, int pageIndex, int pageSize, out int totalRecords)
@@ -264,9 +269,28 @@ namespace Yibi.LiteDbMembershipProvider
         public bool IsUserInRole(Guid applicationId, string username, string roleName)
         {
             UsersInfo userInfo = _db.Users.FindOne(m => m.ApplicationId.Equals(applicationId) && m.Name.Equals(username, StringComparison.OrdinalIgnoreCase));
-            RolesInfo roleInfo = _db.Roles.FindOne(m => m.ApplicationId.Equals(applicationId) && m.Name.Equals(username, StringComparison.OrdinalIgnoreCase));
+            RolesInfo roleInfo = _db.Roles.FindOne(m => m.ApplicationId.Equals(applicationId) && m.Name.Equals(roleName, StringComparison.OrdinalIgnoreCase));
+
+            if (userInfo == null || roleInfo == null) return false;
 
             return _db.UsersInRoles.FindOne(m => m.UserId.Equals(userInfo.Id) && m.RoleId.Equals(roleInfo.Id)) != null;
+        }
+
+        public void AddUsersToRoles(Guid applicationId, string[] usernames, string[] roleNames)
+        {
+            Guid[] userids = _db.Users.Find(m => m.ApplicationId.Equals(applicationId) && usernames.Contains(m.Name)).Select(m => m.Id).ToArray();
+            Guid[] roleids = _db.Roles.Find(m => m.ApplicationId.Equals(applicationId) && roleNames.Contains(m.Name)).Select(m => m.Id).ToArray();
+
+            foreach (Guid roleid in roleids)
+            {
+                foreach (Guid userid in userids)
+                {
+                    if (_db.UsersInRoles.FindOne(m => m.RoleId.Equals(roleid) && m.UserId.Equals(userid)) == null)
+                    {
+                        _db.UsersInRoles.Insert(new UsersInRolesInfo { UserId = userid, RoleId = roleid });
+                    }
+                }
+            }
         }
 
         public void RemoveUsersFromRoles(Guid applicationId, string[] usernames, string[] roleNames)

@@ -66,7 +66,7 @@ namespace Yibi.LiteDbMembershipProvider
 
         public override void AddUsersToRoles(string[] usernames, string[] roleNames)
         {
-            throw new NotImplementedException();
+            _rolesService.AddUsersToRoles(ApplicationId, usernames, roleNames);
         }
 
         public override void CreateRole(string roleName)

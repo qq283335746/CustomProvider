@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories.LiteDB", "Repo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiteDbMembershipProvider", "LiteDbMembershipProvider\LiteDbMembershipProvider.csproj", "{E4BEC625-5344-44D7-A18A-6C5A5C38C296}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiteDbMembershipProviderTest", "LiteDbMembershipProviderTest\LiteDbMembershipProviderTest.csproj", "{5FBEAD48-C9DC-425F-AF58-8388B54D65E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,14 @@ Global
 		{E4BEC625-5344-44D7-A18A-6C5A5C38C296}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E4BEC625-5344-44D7-A18A-6C5A5C38C296}.Release|x86.ActiveCfg = Release|Any CPU
 		{E4BEC625-5344-44D7-A18A-6C5A5C38C296}.Release|x86.Build.0 = Release|Any CPU
+		{5FBEAD48-C9DC-425F-AF58-8388B54D65E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FBEAD48-C9DC-425F-AF58-8388B54D65E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FBEAD48-C9DC-425F-AF58-8388B54D65E7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5FBEAD48-C9DC-425F-AF58-8388B54D65E7}.Debug|x86.Build.0 = Debug|Any CPU
+		{5FBEAD48-C9DC-425F-AF58-8388B54D65E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FBEAD48-C9DC-425F-AF58-8388B54D65E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FBEAD48-C9DC-425F-AF58-8388B54D65E7}.Release|x86.ActiveCfg = Release|Any CPU
+		{5FBEAD48-C9DC-425F-AF58-8388B54D65E7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
