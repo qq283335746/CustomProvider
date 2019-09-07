@@ -4,11 +4,11 @@
     <TargetFrameworks>net40;net45;net46</TargetFrameworks>
     <AssemblyName>Yibi.LiteMembershipProvider</AssemblyName>
     <RootNamespace>Yibi.LiteMembershipProvider</RootNamespace>
-    <PackageId>Yibi.LiteMembershipProvider</PackageId>
-    <PackageTags>LiteDB,MembershipProvider,RoleProvider </PackageTags>
   </PropertyGroup>
   <PropertyGroup>
-    <Version>1.0.4</Version>
+    <PackageId>Yibi.LiteMembershipProvider</PackageId>
+    <PackageTags>LiteDB,MembershipProvider,RoleProvider </PackageTags>
+    <Version>1.0.5</Version>
     <Authors>yibi chen</Authors>
     <Company>yibi chen</Company>
     <Description>Using LiteDB to implement Membership、Roles Provider</Description>
