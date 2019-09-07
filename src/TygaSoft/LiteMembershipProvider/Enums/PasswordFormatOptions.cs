@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Yibi.LiteDbMembershipProvider.Enums
+namespace Yibi.LiteMembershipProvider.Enums
 {
     public enum PasswordFormatOptions
     {

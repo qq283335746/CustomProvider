@@ -1,7 +1,7 @@
 ﻿using LiteDB;
 using System;
 
-namespace Yibi.LiteDbMembershipProvider.Entities
+namespace Yibi.LiteMembershipProvider.Entities
 {
     public class UsersInRolesInfo
     {

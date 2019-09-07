@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Yibi.LiteDbMembershipProvider.Entities
+namespace Yibi.LiteMembershipProvider.Entities
 {
     public partial class RolesInfo
     {

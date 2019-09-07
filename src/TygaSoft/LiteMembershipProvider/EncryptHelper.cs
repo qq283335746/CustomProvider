@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using Yibi.LiteDbMembershipProvider.Enums;
+using Yibi.LiteMembershipProvider.Enums;
 
-namespace Yibi.LiteDbMembershipProvider
+namespace Yibi.LiteMembershipProvider
 {
     public class EncryptHelper
     {

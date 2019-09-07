@@ -10,9 +10,8 @@ using System.Web.Hosting;
 using System.Globalization;
 using System.Xml;
 using System.Configuration;
-using TygaSoft.DBUtility;
 
-namespace TygaSoft.CustomProvider
+namespace Yibi.SQLiteMembershipProvider
 {
     internal static class SU
     {

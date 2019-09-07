@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Web.Security;
 
-namespace TygaSoft.CustomProvider
+namespace Yibi.SQLiteMembershipProvider
 {
     public class EnumMembershipCreateStatus
     {

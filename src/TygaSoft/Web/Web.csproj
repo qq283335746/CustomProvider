@@ -113,10 +113,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CustomProvider\CustomProvider.csproj">
-      <Project>{5F9D5C16-98DC-4F90-AA85-6157B156DFAE}</Project>
-      <Name>CustomProvider</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WcfService\WcfService.csproj">
       <Project>{7BAE0B6A-B410-4B30-B3DA-4BC61C2B74A5}</Project>
       <Name>WcfService</Name>

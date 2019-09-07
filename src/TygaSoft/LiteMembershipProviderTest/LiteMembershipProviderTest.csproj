@@ -50,9 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LiteDbMembershipProvider\LiteDbMembershipProvider.csproj">
+    <ProjectReference Include="..\LiteMembershipProvider\LiteMembershipProvider.csproj">
       <Project>{e4bec625-5344-44d7-a18a-6c5a5c38c296}</Project>
-      <Name>LiteDbMembershipProvider</Name>
+      <Name>LiteMembershipProvider</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

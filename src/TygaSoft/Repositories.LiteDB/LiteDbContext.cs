@@ -15,7 +15,7 @@ namespace Yibi.Repositories.LiteDB
                 Context = db;
         }
 
-        public LiteCollection<ApplicationInfo> Applications => Context.GetCollection<ApplicationInfo>("Applications");
+        public LiteCollection<ApplicationsInfo> Applications => Context.GetCollection<ApplicationsInfo>("Applications");
 
         public LiteCollection<UsersInfo> Users => Context.GetCollection<UsersInfo>("Users");
 

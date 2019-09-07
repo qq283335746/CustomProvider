@@ -12,12 +12,12 @@ using System.Text;
 using System.Web.Profile;
 using System.Xml.Serialization;
 
-namespace TygaSoft.CustomProvider
+namespace Yibi.SQLiteMembershipProvider
 {
 	/// <summary>
 	/// Provides a Profile implementation whose data is stored in a SQLite database.
 	/// </summary>
-	public sealed class SQLiteProfileProvider : ProfileProvider
+	public sealed class CustomProfileProvider : ProfileProvider
 	{
 		#region Private Fields
 
@@ -1251,7 +1251,7 @@ namespace TygaSoft.CustomProvider
 		/// </returns>
 		/// <remarks>A transaction is considered in progress if an instance of <see cref="SQLiteTransaction"/> is found in the
 		/// <see cref="System.Web.HttpContext.Current"/> Items property and its connection string is equal to the Profile 
-		/// provider's connection string. Note that this implementation of <see cref="SQLiteProfileProvider"/> never adds a 
+		/// provider's connection string. Note that this implementation of <see cref="CustomProfileProvider"/> never adds a 
 		/// <see cref="SQLiteTransaction"/> to <see cref="System.Web.HttpContext.Current"/>, but it is possible that 
 		/// another data provider in this application does. This may be because other data is also stored in this SQLite database,
 		/// and the application author wants to provide transaction support across the individual providers. If an instance of

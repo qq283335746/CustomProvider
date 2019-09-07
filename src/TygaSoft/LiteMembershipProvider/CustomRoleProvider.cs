@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Configuration;
-using System.Linq;
 using System.Web.Security;
-using Yibi.LiteDbMembershipProvider.Entities;
+using Yibi.LiteMembershipProvider.Entities;
 
-namespace Yibi.LiteDbMembershipProvider
+namespace Yibi.LiteMembershipProvider
 {
-    public class LiteDbRoleProvider : RoleProvider
+    public class CustomRoleProvider : RoleProvider
     {
         private AspnetSecurityService _rolesService;
         public string _applicationName;
@@ -47,7 +45,7 @@ namespace Yibi.LiteDbMembershipProvider
             {
                 if (_applicationId == null || _applicationId.Equals(Guid.Empty))
                 {
-                    ApplicationInfo applicationInfo = _rolesService.GetApplication(ApplicationName);
+                    ApplicationsInfo applicationInfo = _rolesService.GetApplication(ApplicationName);
                     if (applicationInfo != null) _applicationId = applicationInfo.Id;
                 }
 

@@ -16,12 +16,12 @@ namespace Yibi.Repositories.LiteDB
             _db = db;
         }
 
-        public ApplicationInfo GetApplication(string applicationName)
+        public ApplicationsInfo GetApplication(string applicationName)
         {
             return _db.Applications.FindOne(m => m.Name.Equals(applicationName));
         }
 
-        public Guid Insert(ApplicationInfo model)
+        public Guid Insert(ApplicationsInfo model)
         {
             var effect = _db.Applications.Insert(model);
 

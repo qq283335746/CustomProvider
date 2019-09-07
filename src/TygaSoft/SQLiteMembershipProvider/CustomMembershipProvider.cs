@@ -8,13 +8,12 @@ using System.Configuration.Provider;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Data.SQLite;
-using TygaSoft.DBUtility;
 using System.Data;
 using System.Security.Cryptography;
 
-namespace TygaSoft.CustomProvider
+namespace Yibi.SQLiteMembershipProvider
 {
-    public class SQLiteMembershipProvider : MembershipProvider
+    public class CustomMembershipProvider : MembershipProvider
     {
         private static string Sql_Applications_Id = string.Format("select ApplicationId from {0} where LoweredApplicationName = @LoweredApplicationName", SU.AspnetApplications);
         private static string Sql_SelectPasswordWithFormat = string.Format("select m.Password,m.PasswordFormat,m.PasswordSalt,m.FailedPasswordAttemptCount,m.IsApproved,m.LastLoginDate,u.LastActivityDate from {0} m,{1} u where m.UserId = u.UserId and u.UserName = @UserName and u.ApplicationId = @ApplicationId", SU.AspnetMembership, SU.AspnetUsers);

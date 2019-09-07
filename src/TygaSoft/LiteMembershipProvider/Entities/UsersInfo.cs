@@ -1,7 +1,7 @@
 ﻿using System;
-using Yibi.LiteDbMembershipProvider.Enums;
+using Yibi.LiteMembershipProvider.Enums;
 
-namespace Yibi.LiteDbMembershipProvider.Entities
+namespace Yibi.LiteMembershipProvider.Entities
 {
     public partial class UsersInfo
     {

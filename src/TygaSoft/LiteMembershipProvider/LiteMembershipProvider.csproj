@@ -2,26 +2,26 @@
 
   <PropertyGroup>
     <TargetFrameworks>net40;net45;net46</TargetFrameworks>
-    <AssemblyName>Yibi.LiteDbMembershipProvider</AssemblyName>
-    <RootNamespace>Yibi.LiteDbMembershipProvider</RootNamespace>
-    <PackageId>Yibi.LiteDbMembershipProvider</PackageId>
+    <AssemblyName>Yibi.LiteMembershipProvider</AssemblyName>
+    <RootNamespace>Yibi.LiteMembershipProvider</RootNamespace>
+    <PackageId>Yibi.LiteMembershipProvider</PackageId>
     <PackageTags>LiteDB,MembershipProvider,RoleProvider </PackageTags>
   </PropertyGroup>
   <PropertyGroup>
-    <Version>1.0.0</Version>
+    <Version>1.0.4</Version>
     <Authors>yibi chen</Authors>
     <Company>yibi chen</Company>
-    <Description>Using litedb to implement Membership、Role</Description>
+    <Description>Using LiteDB to implement Membership、Roles Provider</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <IncludeSymbols>true</IncludeSymbols>
     <EmbedAllSources>true</EmbedAllSources>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PackageProjectUrl>https://github.com/qq283335746/SQLiteProvider/tree/master/src/TygaSoft/LiteDbMembershipProvider</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/qq283335746/SQLiteProvider/tree/master/src/TygaSoft/LiteDbMembershipProvider</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/qq283335746/SQLiteProvider/tree/master/src/TygaSoft/LiteMembershipProvider</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/qq283335746/SQLiteProvider/tree/master/src/TygaSoft/LiteMembershipProvider</RepositoryUrl>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>Yibi.LiteDbMembershipProvider.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Yibi.LiteMembershipProvider.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>

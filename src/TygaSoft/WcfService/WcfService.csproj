@@ -19,6 +19,13 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,13 +74,13 @@
     <Compile Include="SecurityService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CustomProvider\CustomProvider.csproj">
-      <Project>{5F9D5C16-98DC-4F90-AA85-6157B156DFAE}</Project>
-      <Name>CustomProvider</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{476B87AB-C9BE-4CFB-A497-FAA94D1ED509}</Project>
-      <Name>Model %28Model\Model%29</Name>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLiteMembershipProvider\SQLiteMembershipProvider.csproj">
+      <Project>{2EEED893-3D06-4AD0-A1A3-63F75F7ABA33}</Project>
+      <Name>SQLiteMembershipProvider</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
@@ -98,7 +105,6 @@
           <CustomServerUrl>
           </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
-          <EnableWcfTestClientForSVCDefaultValue>True</EnableWcfTestClientForSVCDefaultValue>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

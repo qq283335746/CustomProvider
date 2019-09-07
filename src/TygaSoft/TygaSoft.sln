@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28307.438
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAClient", "CAClient\CAClient.csproj", "{3B10DC07-141E-48CE-9F63-EC080C8CDA4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomProvider", "CustomProvider\CustomProvider.csproj", "{5F9D5C16-98DC-4F90-AA85-6157B156DFAE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBUtility", "DBUtility\DBUtility.csproj", "{BBA09C34-2399-4515-B384-DA90F4E696D9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{476B87AB-C9BE-4CFB-A497-FAA94D1ED509}"
@@ -19,9 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XCore", "XCore\XCore.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories.LiteDB", "Repositories.LiteDB\Repositories.LiteDB.csproj", "{76F808C4-29E1-49D2-9592-73A02255DE17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiteDbMembershipProvider", "LiteDbMembershipProvider\LiteDbMembershipProvider.csproj", "{E4BEC625-5344-44D7-A18A-6C5A5C38C296}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiteMembershipProvider", "LiteMembershipProvider\LiteMembershipProvider.csproj", "{E4BEC625-5344-44D7-A18A-6C5A5C38C296}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiteDbMembershipProviderTest", "LiteDbMembershipProviderTest\LiteDbMembershipProviderTest.csproj", "{5FBEAD48-C9DC-425F-AF58-8388B54D65E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiteMembershipProviderTest", "LiteMembershipProviderTest\LiteMembershipProviderTest.csproj", "{5FBEAD48-C9DC-425F-AF58-8388B54D65E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLiteMembershipProvider", "SQLiteMembershipProvider\SQLiteMembershipProvider.csproj", "{2EEED893-3D06-4AD0-A1A3-63F75F7ABA33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,14 +37,6 @@ Global
 		{3B10DC07-141E-48CE-9F63-EC080C8CDA4C}.Release|Any CPU.ActiveCfg = Release|x86
 		{3B10DC07-141E-48CE-9F63-EC080C8CDA4C}.Release|x86.ActiveCfg = Release|x86
 		{3B10DC07-141E-48CE-9F63-EC080C8CDA4C}.Release|x86.Build.0 = Release|x86
-		{5F9D5C16-98DC-4F90-AA85-6157B156DFAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5F9D5C16-98DC-4F90-AA85-6157B156DFAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5F9D5C16-98DC-4F90-AA85-6157B156DFAE}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5F9D5C16-98DC-4F90-AA85-6157B156DFAE}.Debug|x86.Build.0 = Debug|Any CPU
-		{5F9D5C16-98DC-4F90-AA85-6157B156DFAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5F9D5C16-98DC-4F90-AA85-6157B156DFAE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5F9D5C16-98DC-4F90-AA85-6157B156DFAE}.Release|x86.ActiveCfg = Release|Any CPU
-		{5F9D5C16-98DC-4F90-AA85-6157B156DFAE}.Release|x86.Build.0 = Release|Any CPU
 		{BBA09C34-2399-4515-B384-DA90F4E696D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BBA09C34-2399-4515-B384-DA90F4E696D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBA09C34-2399-4515-B384-DA90F4E696D9}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -109,6 +101,14 @@ Global
 		{5FBEAD48-C9DC-425F-AF58-8388B54D65E7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5FBEAD48-C9DC-425F-AF58-8388B54D65E7}.Release|x86.ActiveCfg = Release|Any CPU
 		{5FBEAD48-C9DC-425F-AF58-8388B54D65E7}.Release|x86.Build.0 = Release|Any CPU
+		{2EEED893-3D06-4AD0-A1A3-63F75F7ABA33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EEED893-3D06-4AD0-A1A3-63F75F7ABA33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EEED893-3D06-4AD0-A1A3-63F75F7ABA33}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2EEED893-3D06-4AD0-A1A3-63F75F7ABA33}.Debug|x86.Build.0 = Debug|Any CPU
+		{2EEED893-3D06-4AD0-A1A3-63F75F7ABA33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EEED893-3D06-4AD0-A1A3-63F75F7ABA33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EEED893-3D06-4AD0-A1A3-63F75F7ABA33}.Release|x86.ActiveCfg = Release|Any CPU
+		{2EEED893-3D06-4AD0-A1A3-63F75F7ABA33}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

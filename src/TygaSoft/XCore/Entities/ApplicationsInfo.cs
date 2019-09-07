@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-namespace Yibi.LiteDbMembershipProvider.Entities
+namespace Yibi.Core.Entities
 {
-    public partial class ApplicationInfo
+    public partial class ApplicationsInfo
     {
         public Guid Id { get; set; }
 

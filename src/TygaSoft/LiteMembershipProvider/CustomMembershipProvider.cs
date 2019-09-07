@@ -4,12 +4,12 @@ using System.Collections.Specialized;
 using System.Configuration;
 using System.Web;
 using System.Web.Security;
-using Yibi.LiteDbMembershipProvider.Entities;
-using Yibi.LiteDbMembershipProvider.Enums;
+using Yibi.LiteMembershipProvider.Entities;
+using Yibi.LiteMembershipProvider.Enums;
 
-namespace Yibi.LiteDbMembershipProvider
+namespace Yibi.LiteMembershipProvider
 {
-    public class LiteDbMembershipProvider : MembershipProvider
+    public class CustomMembershipProvider : MembershipProvider
     {
         private AspnetSecurityService _membershipService;
         private MembershipPasswordFormat _passwordFormat;
@@ -94,7 +94,7 @@ namespace Yibi.LiteDbMembershipProvider
             var oldApplicationInfo = _membershipService.GetApplication(ApplicationName);
             if(oldApplicationInfo == null)
             {
-                _membershipService.Insert(new ApplicationInfo { Id = Guid.NewGuid(), Name = ApplicationName });
+                _membershipService.Insert(new ApplicationsInfo { Id = Guid.NewGuid(), Name = ApplicationName });
             }
         }
 
@@ -122,6 +122,8 @@ namespace Yibi.LiteDbMembershipProvider
 
         public override MembershipPasswordFormat PasswordFormat => _passwordFormat;
 
+        public string ConnectionString => _connectionString;
+
         private Guid _applicationId;
         public Guid ApplicationId
         {
@@ -129,7 +131,7 @@ namespace Yibi.LiteDbMembershipProvider
             {
                 if (_applicationId == null || _applicationId.Equals(Guid.Empty))
                 {
-                    ApplicationInfo applicationInfo = _membershipService.GetApplication(ApplicationName);
+                    ApplicationsInfo applicationInfo = _membershipService.GetApplication(ApplicationName);
                     if (applicationInfo != null) _applicationId = applicationInfo.Id;
                 }
 
@@ -278,7 +280,7 @@ namespace Yibi.LiteDbMembershipProvider
         private MembershipUser FromUsersInfo(UsersInfo userInfo)
         {
             if (userInfo == null) return null;
-            return new MembershipUser(nameof(LiteDbMembershipProvider), userInfo.Name, userInfo.Id, userInfo.Email, string.Empty, string.Empty, userInfo.IsApproved, userInfo.IsLockedOut, userInfo.CreatedDate, userInfo.LastLoginDate, userInfo.LastActivityDate, userInfo.LastUpdatedDate, userInfo.LastLockoutDate);
+            return new MembershipUser(nameof(CustomMembershipProvider), userInfo.Name, userInfo.Id, userInfo.Email, string.Empty, string.Empty, userInfo.IsApproved, userInfo.IsLockedOut, userInfo.CreatedDate, userInfo.LastLoginDate, userInfo.LastActivityDate, userInfo.LastUpdatedDate, userInfo.LastLockoutDate);
         }
 
         private UsersInfo ToUsersInfo(MembershipUser user)

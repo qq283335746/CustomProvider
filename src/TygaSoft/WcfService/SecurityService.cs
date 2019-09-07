@@ -9,9 +9,9 @@ using System.Web;
 using System.Transactions;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
-using TygaSoft.CustomProvider;
 using TygaSoft.Model;
 using TygaSoft.Model.WcfModel;
+using Yibi.SQLiteMembershipProvider;
 
 namespace TygaSoft.WcfService
 {

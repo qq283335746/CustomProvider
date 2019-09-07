@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TygaSoft.CustomProvider
+namespace Yibi.SQLiteMembershipProvider
 {
     internal static class SM
     {

@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Web.Security;
 using System.Collections.Specialized;
 using System.Configuration.Provider;
 using System.Data;
 using System.Data.SQLite;
-using TygaSoft.DBUtility;
 
-namespace TygaSoft.CustomProvider
+namespace Yibi.SQLiteMembershipProvider
 {
-    public class SQLiteRoleProvider : RoleProvider
+    public class CustomRoleProvider : RoleProvider
     {
         private static string Sql_Roles_Insert = string.Format(@"insert into {0} (ApplicationId,RoleId,RoleName,LoweredRoleName,Description) values (@ApplicationId,@RoleId,@RoleName,@LoweredRoleName,@Description)", SU.AspnetRoles);
         private static string Sql_Roles_Delete = string.Format(@"delete from {0} where ApplicationId = @ApplicationId and LoweredRoleName = @LoweredRoleName",SU.AspnetRoles);

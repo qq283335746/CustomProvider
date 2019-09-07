@@ -1,8 +1,8 @@
 ﻿using System;
 using LiteDB;
-using Yibi.LiteDbMembershipProvider.Entities;
+using Yibi.LiteMembershipProvider.Entities;
 
-namespace Yibi.LiteDbMembershipProvider
+namespace Yibi.LiteMembershipProvider
 {
     public class LiteDbContext
     {
@@ -15,7 +15,7 @@ namespace Yibi.LiteDbMembershipProvider
                 Context = db;
         }
 
-        public LiteCollection<ApplicationInfo> Applications => Context.GetCollection<ApplicationInfo>("Applications");
+        public LiteCollection<ApplicationsInfo> Applications => Context.GetCollection<ApplicationsInfo>("Applications");
 
         public LiteCollection<UsersInfo> Users => Context.GetCollection<UsersInfo>("Users");
 

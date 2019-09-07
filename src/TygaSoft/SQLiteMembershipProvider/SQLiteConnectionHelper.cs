@@ -6,7 +6,7 @@ using System.Web.Hosting;
 using System.Configuration;
 using System.Data.SQLite;
 
-namespace TygaSoft.CustomProvider
+namespace Yibi.SQLiteMembershipProvider
 {
     internal static class SQLiteConnectionHelper
     {
